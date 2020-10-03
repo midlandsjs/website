@@ -9,6 +9,7 @@ Welcome to MidlandsJS, a new collaboration group between [NottsJS](https://notts
 
 
 The core midlandsjs team is formed of individuals from the two organizations:
+
 * [David Wood](https://github.com/Codesleuth)
 * [Katie Walker](https://github.com/Kat-Codes)
 * [Jerome Twell](https://github.com/jerometwell)
