@@ -4,7 +4,7 @@
 
 <body>
 
-	<h1>{{ .Site.Data.personalize.Name }}</h1>
+	<h1>{{ .Site.Params.Name }}</h1>
 	<div>
 		{{ $data := where .Site.RegularPages.ByDate.Reverse "Section" "announcements" }}
 		{{ range first 1 $data }}
