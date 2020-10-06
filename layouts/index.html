@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+{{ partial "head.html" . }}
+
+<body>
+
+	<h1>{{ .Site.Params.Name }}</h1>
+	<div>
+		{{ $data := where .Site.RegularPages.ByDate.Reverse "Section" "announcements" }}
+		{{ range first 1 $data }}
+		<div>
+			<h4>{{ .Title }}</h4>
+			{{.Content}}
+		</div>
+		{{ end }}
+		{{ $rest := after 1 $data }}
+		{{ if gt (len $rest) 0 }}
+			<hr />
+			<h3>History</h3>
+			{{ range ($rest) }}
+			<div>
+				<div><a href="{{.Permalink}}">{{ .Title }}</a> <time>{{.Date.Format "2 Jan 2006" }}</time> </div>
+			</div>
+			{{ end }}
+		{{ end }}
+		<hr />
+		<a href="{{ .Site.BaseURL }}announcements">All Announcements</a>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+baseURL = "http://midlandsjs.org/"
+languageCode = "en-us"
+title = "MidlandsJS"
+
+[params]
+Name = "MidlandsJS"
