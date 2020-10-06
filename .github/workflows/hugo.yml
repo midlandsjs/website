@@ -20,3 +20,15 @@ jobs:
       with:
         name: build
         path: public
+  deploy:
+    needs: [ build ]
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    container: mwienk/docker-lftp
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: public
+      - name: upload
+        run: lftp ${{secrets.FTP_URL}} -e "set sftp:auto-confirm yes; mirror -R public public"
