@@ -15,3 +15,10 @@ The most recent announcement will be displayed in full on the index. The others 
 ## Build
 1. Run `hugo`
 2. That's it!
+
+
+## Deployment
+Deployments are managed via netlify from the `HEAD` of `master` automatically. 
+
+## Contributions
+Submit a PR to `master` today! 🥳
